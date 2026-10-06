@@ -1,0 +1,16 @@
+{
+  "name": "Piyush Makvana — Full Stack Developer",
+  "short_name": "Piyush Makvana",
+  "description": "Piyush Makvana is a Full Stack Developer and BCA student building modern web applications with React, Next.js, TypeScript, Node.js, and FastAPI.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#080808",
+  "theme_color": "#01ffa8",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

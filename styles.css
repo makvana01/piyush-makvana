@@ -355,39 +355,6 @@ body.no-scroll {
   transform: scale(1.6);
 }
 
-/* ==========================================================================
-   SCROLL MORPH PHOTO (FLIP Effect from Hero into About Capsule)
-   ========================================================================== */
-.scroll-morph-photo {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 0px;
-  height: 0px;
-  border-radius: 1.5rem;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 150;
-  opacity: 0;
-  visibility: hidden;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
-  border: 1px solid var(--border-light);
-  transform-origin: top left;
-  will-change: transform, width, height, border-radius;
-}
-
-.scroll-morph-photo.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-.scroll-morph-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
 .inline-pill-photo {
   position: relative;
   overflow: hidden;
@@ -1763,5 +1730,87 @@ body.no-scroll {
 
   .btn-copy-content {
     min-width: unset;
+  }
+}
+
+/* ==========================================================================
+   SEO & ACCESSIBILITY ADDITIONS
+   ========================================================================== */
+
+/* Skip to Content Link (visible on focus for keyboard users) */
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent-green);
+  color: var(--black);
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none;
+  border-radius: 0 0 8px 8px;
+  z-index: 100000;
+  transition: top 0.3s ease;
+}
+
+.skip-to-content:focus {
+  top: 0;
+  outline: 2px solid var(--white);
+  outline-offset: 2px;
+}
+
+/* H1 Wrapper — preserves multi-line layout while using single H1 */
+.hero-h1-wrapper {
+  font-family: var(--font-serif);
+  font-size: clamp(3.2rem, 7.5vw, 6.8rem);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  display: block;
+  perspective: 1000px;
+}
+
+.hero-h1-wrapper .hero-h1 {
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+}
+
+.hero-h1-sub {
+  color: var(--gray-300);
+}
+
+/* Reduced Motion Support (Accessibility) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .hero-h1 {
+    transform: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+  }
+
+  .hero-description,
+  .hero-actions,
+  .hero-image-container {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+
+  .preloader {
+    display: none !important;
   }
 }

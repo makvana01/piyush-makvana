@@ -20,8 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // 3. CENTERED PRELOADER WITH DUAL CONVERGING LINES & SHUTTER PAGE CLOSE
   initCenteredPreloader();
 
-  // 4. SCROLL-DRIVEN HERO PHOTO SHRINK INTO ABOUT PILL
-  initHeroPhotoScrollMorph();
 
   // 5. CUSTOM INTERACTIVE CURSOR
   initCustomCursor();
@@ -50,27 +48,11 @@ function initAvailabilityMonth() {
   if (!elements.length) return;
 
   const now = new Date();
-  const currentDay = now.getDate();
-  const currentMonthIndex = now.getMonth();
-
-  let targetMonthIndex;
-  let targetYear = now.getFullYear();
-
-  // If before 7th of month, show current month; otherwise show next month
-  if (currentDay < 7) {
-    targetMonthIndex = currentMonthIndex;
-  } else {
-    targetMonthIndex = (currentMonthIndex + 1) % 12;
-    if (currentMonthIndex === 11) {
-      targetYear += 1;
-    }
-  }
-
-  const dateObj = new Date(targetYear, targetMonthIndex, 1);
-  const monthName = dateObj.toLocaleString("en-US", { month: "long" });
+  const currentMonthName = now.toLocaleString("en-US", { month: "long" });
+  const currentYear = now.getFullYear();
 
   elements.forEach((el) => {
-    el.textContent = `${monthName} ${targetYear}`;
+    el.textContent = `${currentMonthName} ${currentYear}`;
   });
 }
 
@@ -220,83 +202,6 @@ function triggerHeroReveal() {
   }
 }
 
-/* ==========================================================================
-   4. SCROLL-DRIVEN HERO PHOTO SHRINK INTO ABOUT PILL (Matteo Style)
-   ========================================================================== */
-function initHeroPhotoScrollMorph() {
-  const heroBox = document.getElementById("hero-image-container");
-  const heroPortrait = document.getElementById("hero-portrait-img");
-  const targetSlot = document.getElementById("about-photo-slot");
-  const morphPhoto = document.getElementById("scroll-morph-photo");
-
-  if (!heroBox || !targetSlot || !morphPhoto) return;
-
-  function updateMorph() {
-    if (window.innerWidth < 768) {
-      // On small mobile screens, keep standard layout
-      morphPhoto.classList.remove("active");
-      if (heroPortrait) heroPortrait.style.opacity = "1";
-      return;
-    }
-
-    const heroRect = heroBox.getBoundingClientRect();
-    const targetRect = targetSlot.getBoundingClientRect();
-
-    // Scroll progress trigger range
-    // Start morphing as soon as user begins scrolling down from hero
-    const heroTop = heroRect.top;
-    const windowH = window.innerHeight;
-
-    // Trigger distance: from hero middle to about section top
-    const startPoint = windowH * 0.15;
-    const endPoint = targetRect.top;
-
-    // Calculate normalized progress between hero and target slot
-    // We base progress on how close targetSlot is to its resting viewport position
-    const totalDistance = heroBox.offsetTop - targetSlot.offsetTop;
-    const scrollY = window.scrollY;
-
-    const startScroll = heroBox.offsetTop - windowH * 0.25;
-    const endScroll = targetSlot.offsetTop - windowH * 0.45;
-
-    let progress = (scrollY - startScroll) / (endScroll - startScroll);
-    progress = Math.max(0, Math.min(progress, 1));
-
-    if (progress <= 0.02) {
-      // At top: Hero photo is in hero frame
-      morphPhoto.classList.remove("active");
-      if (heroPortrait) heroPortrait.style.opacity = "1";
-      targetSlot.classList.remove("docked");
-    } else if (progress >= 0.98) {
-      // Fully docked in About headline
-      morphPhoto.classList.remove("active");
-      if (heroPortrait) heroPortrait.style.opacity = "0.2";
-      targetSlot.classList.add("docked");
-    } else {
-      // Mid-flight: Morph floating photo shrinks and slides
-      morphPhoto.classList.add("active");
-      if (heroPortrait) heroPortrait.style.opacity = "0";
-      targetSlot.classList.remove("docked");
-
-      // Smooth interpolation between hero rect and target pill rect
-      const currentX = heroRect.left + (targetRect.left - heroRect.left) * progress;
-      const currentY = heroRect.top + (targetRect.top - heroRect.top) * progress;
-      const currentW = heroRect.width + (targetRect.width - heroRect.width) * progress;
-      const currentH = heroRect.height + (targetRect.height - heroRect.height) * progress;
-      const currentRadius = 24 + (999 - 24) * progress;
-
-      morphPhoto.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
-      morphPhoto.style.width = `${currentW}px`;
-      morphPhoto.style.height = `${currentH}px`;
-      morphPhoto.style.borderRadius = `${currentRadius}px`;
-    }
-  }
-
-  // Attach to scroll and resize
-  window.addEventListener("scroll", updateMorph, { passive: true });
-  window.addEventListener("resize", updateMorph);
-  updateMorph();
-}
 
 /* ==========================================================================
    5. CUSTOM INTERACTIVE CURSOR

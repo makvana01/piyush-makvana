@@ -1,0 +1,7 @@
+# Piyush Makvana — Portfolio
+# https://piyush-makvana.vercel.app/
+
+User-agent: *
+Allow: /
+
+Sitemap: https://piyush-makvana.vercel.app/sitemap.xml
