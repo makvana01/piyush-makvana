@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Piyush Makvana — Full Stack Developer &amp; AI Solutions Engineer</title>
+  <meta name="description" content="Full Stack Developer specializing in modern web applications, Next.js, FastAPI, and Gemini AI-powered solutions. Building scalable, intelligent, and pixel-perfect digital experiences." />
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Piyush Makvana — Full Stack Developer &amp; AI Solutions Engineer" />
+  <meta property="og:description" content="Full Stack Developer specializing in modern web applications and AI-powered solutions." />
+  <meta property="og:image" content="assets/piyush.jpg" />
+  
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Film Grain Overlay -->
+  <div class="grain-overlay"></div>
+
+  <!-- Custom Interactive Cursor -->
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-follower"></div>
+
+  <!-- Centered Preloader with Dual-Side Converging Lines & Shutter Page Close -->
+  <div class="preloader" id="preloader">
+    <!-- Theatrical Closing Shutters (come from both sides to close the page) -->
+    <div class="preloader-shutter shutter-left" id="shutter-left"></div>
+    <div class="preloader-shutter shutter-right" id="shutter-right"></div>
+
+    <!-- Center Stage -->
+    <div class="preloader-center-box">
+      <div class="preloader-meta">
+        <span class="status-dot"></span>
+        <span class="preloader-brand">PIYUSH MAKVANA</span>
+      </div>
+
+      <div class="preloader-counter-wrap">
+        <span class="preloader-counter">40</span>
+        <span class="preloader-percent">%</span>
+      </div>
+
+      <div class="preloader-subtext">SYSTEM INITIALIZING &bull; AI PROTOCOLS</div>
+
+      <!-- Symmetrical dual lines coming from both sides -->
+      <div class="preloader-dual-lines">
+        <div class="preloader-line-track track-left">
+          <div class="preloader-line-fill fill-left" id="fill-left"></div>
+        </div>
+        <div class="preloader-center-node" id="center-node"></div>
+        <div class="preloader-line-track track-right">
+          <div class="preloader-line-fill fill-right" id="fill-right"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Persistent Morphing Photo for Scroll FLIP Effect -->
+  <div class="scroll-morph-photo" id="scroll-morph-photo">
+    <img src="assets/piyush-suit.jpg" alt="Piyush Makvana in suit" class="scroll-morph-img" id="scroll-morph-img" />
+  </div>
+
+  <!-- Apple-Style Progressive Gradient Blur Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-gradient-blur">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="container navbar-inner">
+      <a href="#hero" class="navbar-logo">
+        <span>PIYUSH MAKVANA</span>
+      </a>
+      <div class="navbar-actions">
+        <div class="navbar-status">
+          <span class="status-dot"></span>
+          <span>Available for <span data-month-availability></span></span>
+        </div>
+        <button class="hamburger-btn" aria-label="Toggle Navigation Menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 12-Column Theatrical Flap Menu Drawer -->
+  <div class="menu-overlay" id="menu-overlay">
+    <div class="flap-container">
+      <div class="flap-item"></div>
+      <div class="flap-item"></div>
+      <div class="flap-item"></div>
+      <div class="flap-item"></div>
+      <div class="flap-item"></div>
+      <div class="flap-item"></div>
+      <div class="flap-item"></div>
+      <div class="flap-item"></div>
+      <div class="flap-item"></div>
+      <div class="flap-item"></div>
+      <div class="flap-item"></div>
+      <div class="flap-item"></div>
+    </div>
+
+    <div class="container menu-content">
+      <div class="menu-grid">
+        <div class="menu-info">
+          <div class="menu-availability">
+            <span class="status-dot"></span>
+            <span>One spot available for <strong data-month-availability></strong></span>
+          </div>
+          <p class="menu-bio">
+            Full Stack Developer specializing in modern web applications, Next.js, FastAPI, and Gemini AI-powered solutions. Open for freelance projects, startup collaborations, and high-impact engineering.
+          </p>
+          <div class="hero-actions" style="margin-top: 1rem;">
+            <a href="https://t.me/dev14128" target="_blank" rel="noopener noreferrer" class="btn-rolling">
+              <span class="btn-rolling-text-wrap">
+                <span class="btn-rolling-text original">TELEGRAM CHAT</span>
+                <span class="btn-rolling-text duplicate">TELEGRAM CHAT</span>
+              </span>
+            </a>
+            <button class="btn-copy-email">
+              <span class="btn-copy-content">
+                <span class="btn-copy-state default-state">makvanapiyush4142@gmail.com</span>
+                <span class="btn-copy-state hover-state">CLICK TO COPY</span>
+                <span class="btn-copy-state copied-state">COPIED TO CLIPBOARD ✉️</span>
+              </span>
+            </button>
+          </div>
+          <div class="menu-socials">
+            <span class="menu-social-title">Connect</span>
+            <div class="menu-social-links">
+              <a href="https://www.linkedin.com/in/makvana-piyush-325505380" target="_blank" rel="noopener noreferrer" class="menu-social-link">LinkedIn</a>
+              <a href="https://t.me/dev14128" target="_blank" rel="noopener noreferrer" class="menu-social-link">Telegram</a>
+              <a href="https://chat-syatem.vercel.app" target="_blank" rel="noopener noreferrer" class="menu-social-link">AI Chat</a>
+              <a href="https://agro-seed-six.vercel.app/" target="_blank" rel="noopener noreferrer" class="menu-social-link">AgroSeed</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-nav-links">
+          <div class="menu-nav-item">
+            <a href="#hero" class="menu-nav-link" data-text="Index"><span>Index</span></a>
+          </div>
+          <div class="menu-nav-item">
+            <a href="#about" class="menu-nav-link" data-text="About"><span>About</span></a>
+          </div>
+          <div class="menu-nav-item">
+            <a href="#work" class="menu-nav-link" data-text="Work"><span>Work</span></a>
+          </div>
+          <div class="menu-nav-item">
+            <a href="#services" class="menu-nav-link" data-text="Services"><span>Services</span></a>
+          </div>
+          <div class="menu-nav-item">
+            <a href="#why" class="menu-nav-link" data-text="Why Me"><span>Why Me</span></a>
+          </div>
+          <div class="menu-nav-item">
+            <a href="#contact" class="menu-nav-link" data-text="Contact"><span>Contact</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN WRAPPER -->
+  <main>
+    <!-- HERO SECTION -->
+    <section class="section section-hero" id="hero">
+      <div class="container">
+        <div class="hero-wrapper">
+          <div class="hero-left">
+            <div class="hero-badge-row">
+              <div class="navbar-status">
+                <span class="status-dot"></span>
+                <span>One spot available for <span data-month-availability></span></span>
+              </div>
+            </div>
+
+            <div class="hero-title-group">
+              <div class="hero-h1-line">
+                <h1 class="hero-h1">Full-Stack &amp;</h1>
+              </div>
+              <div class="hero-h1-line">
+                <h1 class="hero-h1">AI-Powered</h1>
+              </div>
+              <div class="hero-h1-line">
+                <h1 class="hero-h1">Web Applications</h1>
+              </div>
+            </div>
+
+            <p class="hero-description">
+              Full Stack Developer specializing in modern web applications and AI-powered solutions. Experienced in Next.js, React, TypeScript, FastAPI, Node.js, and Gemini AI. Building intelligent systems, authentication architectures, and responsive user interfaces.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#work" class="btn-rolling">
+                <span class="btn-rolling-text-wrap">
+                  <span class="btn-rolling-text original">EXPLORE WORK</span>
+                  <span class="btn-rolling-text duplicate">EXPLORE WORK</span>
+                </span>
+              </a>
+
+              <button class="btn-copy-email" aria-label="Copy Email Address">
+                <span class="btn-copy-content">
+                  <span class="btn-copy-state default-state">makvanapiyush4142@gmail.com</span>
+                  <span class="btn-copy-state hover-state">CLICK TO COPY</span>
+                  <span class="btn-copy-state copied-state">COPIED TO CLIPBOARD ✉️</span>
+                </span>
+              </button>
+            </div>
+          </div>
+
+          <div class="hero-right">
+            <div class="hero-image-container" id="hero-image-container">
+              <img src="assets/piyush-suit.jpg" alt="Piyush Makvana - Full Stack Developer" class="hero-portrait" id="hero-portrait-img" />
+              <div class="hero-image-badge">
+                <div>
+                  <div class="hero-badge-title">Piyush Makvana</div>
+                  <div class="hero-badge-sub">Full Stack &amp; AI Engineer</div>
+                </div>
+                <div class="hero-badge-tag">Open to Work</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION WITH EDITORIAL INLINE IMAGE CAPSULES -->
+    <section class="section section-about" id="about">
+      <div class="container">
+        <div class="about-headline-wrapper">
+          <h2 class="about-headline">
+            Hello, I’m 
+            <span class="inline-pill inline-pill-photo" id="about-photo-slot" title="Piyush Makvana">
+              <img src="assets/piyush-suit.jpg" alt="Piyush Makvana" class="inline-pill-img" id="about-docked-img" />
+            </span>
+            Piyush, a full-stack engineer
+            <span class="inline-pill" title="AI Architect">
+              <span class="inline-pill-chip">Gemini AI</span>
+            </span>
+            &amp; developer crafting modern 
+            <span class="inline-pill" title="Next.js + FastAPI">
+              <span class="inline-pill-chip">Next.js</span>
+            </span>
+            web experiences and intelligent AI systems.
+          </h2>
+        </div>
+
+        <div class="about-details-grid">
+          <div class="about-card">
+            <span class="about-card-num">01 / FRONTEND</span>
+            <h3 class="about-card-title">Modern Reactive UI</h3>
+            <p class="about-card-desc">
+              Building ultra-responsive, accessible, and high-performance interfaces with Next.js, React.js, TypeScript, and modern CSS architectures. Focused on smooth interactions and zero layout shift.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">React.js</span>
+              <span class="tech-tag">Next.js</span>
+              <span class="tech-tag">TypeScript</span>
+              <span class="tech-tag">Tailwind CSS</span>
+              <span class="tech-tag">Vite</span>
+            </div>
+          </div>
+
+          <div class="about-card">
+            <span class="about-card-num">02 / BACKEND &amp; APIS</span>
+            <h3 class="about-card-title">Scalable Architecture</h3>
+            <p class="about-card-desc">
+              Engineering high-throughput REST APIs and microservices utilizing FastAPI (Python) and Node.js / Express. Proficient in database modeling across MongoDB and MySQL with secure JWT auth.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">FastAPI</span>
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">Express.js</span>
+              <span class="tech-tag">MongoDB</span>
+              <span class="tech-tag">MySQL</span>
+            </div>
+          </div>
+
+          <div class="about-card">
+            <span class="about-card-num">03 / AI &amp; LLMS</span>
+            <h3 class="about-card-title">Intelligent Automation</h3>
+            <p class="about-card-desc">
+              Integrating Large Language Models (LLMs) like Gemini AI to build conversational chat platforms, automated workflows, calendar scheduling integrations, and structured prompt pipelines.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">Gemini AI</span>
+              <span class="tech-tag">LLM Integration</span>
+              <span class="tech-tag">Prompt Engineering</span>
+              <span class="tech-tag">AI Chat Systems</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK / PROJECTS SECTION (2x2 Grid with Glow Matrix) -->
+    <section class="section section-work" id="work">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Selected Work</h2>
+          </div>
+          <p class="section-subtitle">
+            Curated web applications and intelligent AI platforms built for performance and business impact.
+          </p>
+        </div>
+
+        <div class="work-grid">
+          <!-- Project 1: AI Chat System -->
+          <div class="work-card-wrapper">
+            <div class="work-card-glow"></div>
+            <a href="https://chat-syatem.vercel.app" target="_blank" rel="noopener noreferrer" class="work-card-inner">
+              <div class="work-thumb-wrapper">
+                <img src="assets/project-ai-chat.jpg" alt="AI Chat System Screenshot" class="work-thumb-img" />
+                <div class="work-badge-overlay">
+                  <span>Live Demo</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </div>
+              </div>
+              <div class="work-info-row">
+                <h3 class="work-title">AI Chat System</h3>
+                <span class="work-index">/ 01</span>
+              </div>
+              <p class="work-desc">
+                AI-powered conversational intelligence platform engineered with Next.js (TypeScript) and FastAPI. Features calendar integration, real-time Gemini AI streaming, conversation state management, and an ultra-responsive dark interface.
+              </p>
+              <div class="work-stats-row">
+                <div class="work-stat-chip"><strong>Gemini AI</strong> Streaming</div>
+                <div class="work-stat-chip"><strong>Next.js + FastAPI</strong></div>
+                <div class="work-stat-chip"><strong>Live</strong> Demo</div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Project 2: AgroSeed -->
+          <div class="work-card-wrapper">
+            <div class="work-card-glow"></div>
+            <a href="https://agro-seed-six.vercel.app/" target="_blank" rel="noopener noreferrer" class="work-card-inner">
+              <div class="work-thumb-wrapper">
+                <img src="assets/project-agroseed.png" alt="AgroSeed Platform Screenshot" class="work-thumb-img" />
+                <div class="work-badge-overlay">
+                  <span>Live Demo</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </div>
+              </div>
+              <div class="work-info-row">
+                <h3 class="work-title">AgroSeed</h3>
+                <span class="work-index">/ 02</span>
+              </div>
+              <p class="work-desc">
+                Modern high-impact digital platform for agricultural innovation. Engineered with responsive performance, custom green dark-mode aesthetics, interactive crop yield showcases, and sustainable farming solutions.
+              </p>
+              <div class="work-stats-row">
+                <div class="work-stat-chip"><strong>50K+</strong> Farmers Reached</div>
+                <div class="work-stat-chip"><strong>React / Modern Web</strong></div>
+                <div class="work-stat-chip"><strong>500+</strong> Varieties</div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Project 3: StudyToolkit -->
+          <div class="work-card-wrapper">
+            <div class="work-card-glow"></div>
+            <a href="https://www.studytoolkit.live/" target="_blank" rel="noopener noreferrer" class="work-card-inner">
+              <div class="work-thumb-wrapper">
+                <img src="assets/project-studytoolkit.png" alt="StudyToolkit Screenshot" class="work-thumb-img" />
+                <div class="work-badge-overlay">
+                  <span>Live Demo</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </div>
+              </div>
+              <div class="work-info-row">
+                <h3 class="work-title">StudyToolkit</h3>
+                <span class="work-index">/ 03</span>
+              </div>
+              <p class="work-desc">
+                Privacy-first browser-based productivity suite featuring 40+ free student utilities — including scientific calculators, PDF tools, ATS resume builder, OCR text extractor, and study timetable planners.
+              </p>
+              <div class="work-stats-row">
+                <div class="work-stat-chip"><strong>40+ Free Tools</strong> Built</div>
+                <div class="work-stat-chip"><strong>Privacy-First</strong> Client Tech</div>
+                <div class="work-stat-chip"><strong>Live</strong> Web App</div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Project 4: Aethelgard AI / TradingHub -->
+          <div class="work-card-wrapper">
+            <div class="work-card-glow"></div>
+            <a href="https://trading-hub-theta.vercel.app/" target="_blank" rel="noopener noreferrer" class="work-card-inner">
+              <div class="work-thumb-wrapper">
+                <img src="assets/project-tradinghub.png" alt="Aethelgard AI Trading OS Screenshot" class="work-thumb-img" />
+                <div class="work-badge-overlay">
+                  <span>Live Demo</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </div>
+              </div>
+              <div class="work-info-row">
+                <h3 class="work-title">Aethelgard AI / TradingHub</h3>
+                <span class="work-index">/ 04</span>
+              </div>
+              <p class="work-desc">
+                High-frequency institutional AI trading terminal and perpetuals operating system. Powered by real-time WebSocket tick streams, neural agent intelligence, order book depth visualization, and sub-millisecond telemetry.
+              </p>
+              <div class="work-stats-row">
+                <div class="work-stat-chip"><strong>WebSocket</strong> Tick Streams</div>
+                <div class="work-stat-chip"><strong>Neural AI</strong> Agents</div>
+                <div class="work-stat-chip"><strong>Live</strong> Terminal</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES BENTO GRID -->
+    <section class="section section-services" id="services">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Services</h2>
+          </div>
+          <p class="section-subtitle">
+            Tailored engineering capabilities for startups, agencies, and businesses looking to build scalable software.
+          </p>
+        </div>
+
+        <div class="services-bento">
+          <!-- Featured Large Card -->
+          <div class="service-card service-card-featured">
+            <div>
+              <span class="service-card-tag">End-to-End Delivery</span>
+              <h3 class="service-card-title" style="margin-top: 1rem;">Full-Stack Web Apps + AI Integration</h3>
+              <p class="service-card-desc" style="margin-top: 1rem;">
+                From clean database schema design to a lightning-fast responsive frontend. I build complete web applications with modern stacks like Next.js, FastAPI, Node.js, and integrate Gemini AI models for real-world automation.
+              </p>
+              <ul class="service-checklist">
+                <li class="service-check-item">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  <span>Full Next.js / React Frontend Architecture</span>
+                </li>
+                <li class="service-check-item">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  <span>FastAPI or Node.js High-Performance REST Backend</span>
+                </li>
+                <li class="service-check-item">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  <span>Gemini AI / LLM Integration &amp; Prompt Engineering</span>
+                </li>
+                <li class="service-check-item">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  <span>MongoDB / MySQL Database Modeling &amp; Auth Systems</span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <a href="https://t.me/dev14128" target="_blank" rel="noopener noreferrer" class="btn-rolling">
+                <span class="btn-rolling-text-wrap">
+                  <span class="btn-rolling-text original">GET IN TOUCH</span>
+                  <span class="btn-rolling-text duplicate">GET IN TOUCH</span>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 2: AI & LLM Systems -->
+          <div class="service-card">
+            <span class="service-card-tag">AI Engineering</span>
+            <h3 class="service-card-title">AI Chat &amp; LLM Systems</h3>
+            <p class="service-card-desc">
+              Custom AI chat assistants, tool-calling pipelines, automated document analysis, and prompt engineering tailored to your brand's knowledge base.
+            </p>
+          </div>
+
+          <!-- Card 3: Modern Frontends -->
+          <div class="service-card">
+            <span class="service-card-tag">Frontend &amp; UI</span>
+            <h3 class="service-card-title">Modern Reactive Interfaces</h3>
+            <p class="service-card-desc">
+              Pixel-perfect implementation of Figma designs into clean React/Next.js code. 99+ Lighthouse performance, fluid animations, and mobile-first responsiveness.
+            </p>
+          </div>
+
+          <!-- Card 4: Monthly Retainer -->
+          <div class="service-card" style="grid-column: span 2;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 1rem;">
+              <div>
+                <span class="service-card-tag">Ongoing Retainer</span>
+                <h3 class="service-card-title" style="margin-top: 0.5rem;">Dedicated Full-Stack Support</h3>
+              </div>
+              <a href="https://t.me/dev14128" target="_blank" rel="noopener noreferrer" class="btn-rolling">
+                <span class="btn-rolling-text-wrap">
+                  <span class="btn-rolling-text original">DISCUSS COLLABORATION</span>
+                  <span class="btn-rolling-text duplicate">DISCUSS COLLABORATION</span>
+                </span>
+              </a>
+            </div>
+            <p class="service-card-desc">
+              Continuous development, API maintenance, feature rollouts, and direct async collaboration for established products and ambitious startups.
+            </p>
+            <div style="display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 1rem;">
+              <span class="service-check-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                <span>24–48h Turnaround on Tasks</span>
+              </span>
+              <span class="service-check-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                <span>Frontend, Backend &amp; AI Scope</span>
+              </span>
+              <span class="service-check-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                <span>Transparent Async Communication</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY WORK WITH ME (Sticky 2-Column Section) -->
+    <section class="section section-why" id="why">
+      <div class="container">
+        <div class="why-layout">
+          <div class="why-sticky-col">
+            <h2 class="why-title">Why work<br />with me</h2>
+          </div>
+
+          <div class="why-content-col">
+            <div class="why-card">
+              <span class="why-card-num">01.</span>
+              <h3 class="why-card-title">Full-Stack &amp; AI Synthesis</h3>
+              <p class="why-card-desc">
+                Unlike developers who only build UI or only write scripts, I bridge the full gap: designing reactive Next.js client layers, writing fast Python/FastAPI backend logic, and integrating Gemini AI models into dependable production pipelines.
+              </p>
+            </div>
+
+            <div class="why-card">
+              <span class="why-card-num">02.</span>
+              <h3 class="why-card-title">Obsession with Speed &amp; Polish</h3>
+              <p class="why-card-desc">
+                Every website and API I build is engineered for high performance. Clean codebases, smooth 60fps animations, optimized bundles, and sub-50ms API endpoints make your digital product feel premium and memorable.
+              </p>
+            </div>
+
+            <div class="why-card">
+              <span class="why-card-num">03.</span>
+              <h3 class="why-card-title">Goal-Oriented Execution</h3>
+              <p class="why-card-desc">
+                I don’t just write code for the sake of it; I focus on what moves the needle for your project — whether that is automating conversations with AI, increasing visitor conversion rates, or scaling a robust database.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION & CREDENTIALS -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Background</h2>
+          </div>
+          <p class="section-subtitle">
+            Academic foundation and communication versatility.
+          </p>
+        </div>
+
+        <div class="about-details-grid" style="grid-template-columns: repeat(2, 1fr);">
+          <div class="about-card">
+            <span class="about-card-num">EDUCATION</span>
+            <h3 class="about-card-title">Bachelor of Computer Applications (BCA)</h3>
+            <p class="about-card-desc">
+              SASCMA College — 2024–2027 (Pursuing)<br />
+              Rigorous coursework in computer science, database management systems, data structures, and software engineering principles.
+            </p>
+          </div>
+
+          <div class="about-card">
+            <span class="about-card-num">COMMUNICATION</span>
+            <h3 class="about-card-title">Languages &amp; Collaboration</h3>
+            <p class="about-card-desc">
+              Fluent in English, Hindi, and Gujarati.<br />
+              Experienced in async collaboration using Git, GitHub, Postman, Render, and Vercel for clean code deployment.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQS ACCORDION -->
+    <section class="section section-faq">
+      <div class="container">
+        <div class="faq-layout">
+          <div>
+            <h2 class="faq-sticky-title">Frequently<br />Asked<br />Questions</h2>
+          </div>
+
+          <div class="faq-list">
+            <div class="faq-item">
+              <button class="faq-trigger">
+                <span>What is your primary tech stack?</span>
+                <div class="faq-icon">
+                  <span class="faq-icon-line faq-icon-h"></span>
+                  <span class="faq-icon-line faq-icon-v"></span>
+                </div>
+              </button>
+              <div class="faq-body">
+                <div class="faq-body-inner">
+                  I specialize in Next.js, React.js, and TypeScript for the frontend, combined with FastAPI (Python) and Node.js / Express for backend APIs. For data persistence, I work with MongoDB and MySQL, and for AI capabilities, I integrate Gemini AI and large language model APIs.
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-trigger">
+                <span>Can you integrate AI into an existing web app?</span>
+                <div class="faq-icon">
+                  <span class="faq-icon-line faq-icon-h"></span>
+                  <span class="faq-icon-line faq-icon-v"></span>
+                </div>
+              </button>
+              <div class="faq-body">
+                <div class="faq-body-inner">
+                  Yes, absolutely. Whether you need a smart chatbot, automated prompt workflows, calendar scheduling, or structured data extraction with Gemini AI, I can architect a clean microservice API and connect it seamlessly to your existing frontend or database.
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-trigger">
+                <span>How does the collaboration process work?</span>
+                <div class="faq-icon">
+                  <span class="faq-icon-line faq-icon-h"></span>
+                  <span class="faq-icon-line faq-icon-v"></span>
+                </div>
+              </button>
+              <div class="faq-body">
+                <div class="faq-body-inner">
+                  We start with a discussion to align on your project scope and targets. I provide frequent milestone demos via staging URLs (e.g. on Vercel), track tasks transparently, and communicate continuously via Telegram or email.
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-trigger">
+                <span>Are you available for freelance or contract work?</span>
+                <div class="faq-icon">
+                  <span class="faq-icon-line faq-icon-h"></span>
+                  <span class="faq-icon-line faq-icon-v"></span>
+                </div>
+              </button>
+              <div class="faq-body">
+                <div class="faq-body-inner">
+                  Yes, I am currently accepting freelance projects, startup MVP builds, and monthly retainer arrangements. Reach out via Telegram or email to check current availability.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER & KINETIC HEADLINE CTA -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-cta">
+        <div class="footer-availability">
+          <span class="status-dot"></span>
+          <span>One spot available for <strong data-month-availability></strong></span>
+        </div>
+
+        <h2 class="footer-headline">
+          Do you want to start a project together?
+        </h2>
+
+        <div class="footer-actions">
+          <a href="https://t.me/dev14128" target="_blank" rel="noopener noreferrer" class="btn-rolling">
+            <span class="btn-rolling-text-wrap">
+              <span class="btn-rolling-text original">MESSAGE ON TELEGRAM</span>
+              <span class="btn-rolling-text duplicate">MESSAGE ON TELEGRAM</span>
+            </span>
+          </a>
+
+          <button class="btn-copy-email" aria-label="Copy Email Address">
+            <span class="btn-copy-content">
+              <span class="btn-copy-state default-state">makvanapiyush4142@gmail.com</span>
+              <span class="btn-copy-state hover-state">CLICK TO COPY</span>
+              <span class="btn-copy-state copied-state">COPIED TO CLIPBOARD ✉️</span>
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; <span id="year">2026</span> Piyush Makvana. Engineered with precision.
+        </div>
+        <div class="footer-bottom-links">
+          <a href="https://www.linkedin.com/in/makvana-piyush-325505380" target="_blank" rel="noopener noreferrer" class="footer-bottom-link">LinkedIn</a>
+          <a href="https://t.me/dev14128" target="_blank" rel="noopener noreferrer" class="footer-bottom-link">Telegram</a>
+          <a href="https://chat-syatem.vercel.app" target="_blank" rel="noopener noreferrer" class="footer-bottom-link">AI Chat</a>
+          <a href="https://agro-seed-six.vercel.app/" target="_blank" rel="noopener noreferrer" class="footer-bottom-link">AgroSeed</a>
+          <a href="https://www.studytoolkit.live/" target="_blank" rel="noopener noreferrer" class="footer-bottom-link">StudyToolkit</a>
+          <a href="https://trading-hub-theta.vercel.app/" target="_blank" rel="noopener noreferrer" class="footer-bottom-link">Trading OS</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GSAP & ScrollTrigger Engine -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Studio Freight Lenis Smooth Scroll -->
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"></script>
+  <!-- Interaction Script -->
+  <script src="script.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
