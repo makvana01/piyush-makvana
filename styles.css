@@ -91,8 +91,8 @@ body.no-scroll {
 .grain-overlay {
   position: fixed;
   inset: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
   z-index: 9999;
   opacity: 0.035;
@@ -181,8 +181,8 @@ body.no-scroll {
 .preloader {
   position: fixed;
   inset: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: var(--black);
   z-index: 10001;
   display: flex;
@@ -203,7 +203,7 @@ body.no-scroll {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 50.5vw;
+  width: 50.5%;
   background-color: #0c0c0c;
   z-index: 5;
   pointer-events: none;
@@ -570,8 +570,8 @@ body.no-scroll {
 .menu-overlay {
   position: fixed;
   inset: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   z-index: 850;
   pointer-events: none;
   visibility: hidden;
@@ -1357,6 +1357,33 @@ body.no-scroll {
   justify-content: space-between;
 }
 
+.service-card-wide {
+  grid-column: span 2;
+}
+
+.service-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.service-perks-row {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.background-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.menu-actions {
+  margin-top: 1rem;
+}
+
 .service-card-tag {
   font-size: 0.75rem;
   letter-spacing: 0.12em;
@@ -1621,6 +1648,7 @@ body.no-scroll {
 .footer-bottom-links {
   display: flex;
   gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .footer-bottom-link {
@@ -1634,102 +1662,692 @@ body.no-scroll {
 }
 
 /* ==========================================================================
-   RESPONSIVE DESIGN (TABLET & MOBILE)
+   RESPONSIVE DESIGN (DESKTOP PRESERVED • TABLET & MOBILE OPTIMIZED)
    ========================================================================== */
+
+/* Touch Device Optimization: Remove custom cursor on touch / coarse pointer */
+@media (hover: none), (pointer: coarse) {
+  .custom-cursor,
+  .custom-cursor-follower {
+    display: none !important;
+  }
+}
+
+/* 1. Large Tablet / Small Laptop (max-width: 1199px) */
+@media (max-width: 1199px) {
+  :root {
+    --container-max: 1040px;
+  }
+
+  .container {
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+  }
+
+  .hero-wrapper {
+    gap: 3rem;
+  }
+
+  .services-bento {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* 2. Tablet & Smaller Viewports (max-width: 991px) */
 @media (max-width: 991px) {
+  :root {
+    --nav-height: 72px;
+  }
+
+  .custom-cursor,
+  .custom-cursor-follower {
+    display: none !important;
+  }
+
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .section-hero {
+    padding-top: 8rem;
+    padding-bottom: 5rem;
+    min-height: auto;
+  }
+
+  /* Hero Layout */
   .hero-wrapper {
     grid-template-columns: 1fr;
     gap: 3.5rem;
   }
 
   .hero-image-container {
-    max-width: 500px;
+    max-width: 520px;
     margin: 0 auto;
   }
 
+  /* Section Header */
+  .section-header {
+    margin-bottom: 3rem;
+  }
+
+  /* About Layout */
   .about-details-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
+  .background-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Work Grid */
   .work-grid {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
+  /* Services Bento */
   .services-bento {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .service-card-featured {
     grid-row: auto;
   }
 
+  .service-card-wide {
+    grid-column: span 1 !important;
+  }
+
+  .service-card {
+    padding: 2.25rem 2rem;
+  }
+
+  /* Why Me Section */
   .why-layout {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
 
   .why-sticky-col {
-    position: relative;
-    top: 0;
+    position: static;
+    top: auto;
   }
 
-  .faq-layout {
-    grid-template-columns: 1fr;
+  .why-content-col {
     gap: 3rem;
   }
 
+  /* FAQ Section */
+  .faq-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
   .faq-sticky-title {
-    position: relative;
-    top: 0;
+    position: static;
+    top: auto;
+  }
+
+  /* Theatrical Menu Overlay - Scrollable & Fits all viewports */
+  .menu-overlay {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .menu-content {
+    justify-content: flex-start;
+    padding-top: calc(var(--nav-height) + 2rem);
+    padding-bottom: 3.5rem;
+    min-height: 100vh;
+    height: auto;
+    overflow-y: visible;
   }
 
   .menu-grid {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 2.5rem;
+  }
+
+  .menu-nav-links {
+    order: 1;
+    gap: 0.75rem;
+  }
+
+  .menu-info {
+    order: 2;
+    gap: 1.5rem;
+  }
+
+  .menu-nav-link {
+    font-size: clamp(2.5rem, 6.5vw, 4.5rem);
+  }
+
+  .footer-cta {
+    margin-bottom: 5rem;
+    gap: 2.5rem;
+  }
+
+  .footer-headline {
+    font-size: clamp(3rem, 7.5vw, 5.5rem);
   }
 }
 
+/* 3. Mobile Devices (max-width: 767px) */
 @media (max-width: 767px) {
+  :root {
+    --nav-height: 68px;
+  }
+
+  html, body {
+    overflow-x: clip;
+    max-width: 100%;
+  }
+
+  .container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .container-narrow {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
   .section {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
   }
 
   .section-hero {
-    padding-top: 7rem;
-    padding-bottom: 4rem;
+    padding-top: 6.5rem;
+    padding-bottom: 3.5rem;
   }
 
-  .section-why {
-    margin-left: 0;
-    margin-right: 0;
-    border-radius: 1.5rem;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+  /* Navbar */
+  .navbar-inner {
+    padding-top: 0.25rem;
   }
 
-  .footer-bottom {
-    flex-direction: column;
-    gap: 1.5rem;
-    align-items: flex-start;
+  .navbar-logo {
+    font-size: 0.9375rem;
+    letter-spacing: 0.08em;
   }
 
   .navbar-status {
     display: none;
   }
 
+  .hamburger-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  /* Preloader Mobile Sizing */
+  .preloader-center-box {
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+    width: 92%;
+  }
+
+  .preloader-meta {
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+  }
+
+  .preloader-counter {
+    font-size: clamp(4.5rem, 18vw, 7.5rem);
+  }
+
+  .preloader-percent {
+    font-size: clamp(1.8rem, 7vw, 3rem);
+  }
+
+  .preloader-subtext {
+    font-size: 0.6875rem;
+    letter-spacing: 0.08em;
+  }
+
+  .preloader-dual-lines {
+    max-width: 280px;
+    margin-top: 1rem;
+  }
+
+  /* Section Header: Stack cleanly instead of squishing */
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .section-title {
+    font-size: clamp(2.2rem, 8vw, 3.2rem);
+  }
+
+  .section-subtitle {
+    text-align: left;
+    max-width: 100%;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+
+  /* Hero Section */
+  .hero-wrapper {
+    gap: 2.75rem;
+  }
+
+  .hero-left {
+    gap: 1.5rem;
+  }
+
+  .hero-badge-row {
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-h1-wrapper {
+    font-size: clamp(2.2rem, 9.5vw, 3.8rem);
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
   .hero-actions {
     flex-direction: column;
     align-items: stretch;
+    width: 100%;
+    gap: 0.85rem;
   }
 
-  .btn-rolling, .btn-copy-email {
+  .btn-rolling,
+  .btn-copy-email {
     width: 100%;
+    min-height: 48px;
+    padding: 0.85rem 1.25rem;
+    font-size: 0.875rem;
     text-align: center;
   }
 
   .btn-copy-content {
-    min-width: unset;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .hero-image-container {
+    max-width: 100%;
+    border-radius: 1.25rem;
+    aspect-ratio: 16/11;
+  }
+
+  .hero-image-badge {
+    bottom: 0.85rem;
+    left: 0.85rem;
+    right: 0.85rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .hero-badge-title {
+    font-size: 0.875rem;
+  }
+
+  .hero-badge-sub {
+    font-size: 0.75rem;
+  }
+
+  .hero-badge-tag {
+    font-size: 0.6875rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  /* About Section */
+  .section-about {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .about-headline-wrapper {
+    margin-bottom: 2.5rem;
+  }
+
+  .about-headline {
+    font-size: clamp(1.65rem, 5.8vw, 2.5rem);
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+  }
+
+  .inline-pill {
+    height: 1.25em;
+    padding: 0 0.35em;
+    margin: 0 0.1em;
+  }
+
+  .inline-pill-chip {
+    font-size: 0.42em;
+    padding: 0.25em 0.55em;
+  }
+
+  .about-details-grid {
+    margin-top: 2.25rem;
+    gap: 1.25rem;
+  }
+
+  .about-card {
+    padding: 1.5rem 1.25rem;
+    gap: 1rem;
+    border-radius: 1rem;
+  }
+
+  .about-card-title {
+    font-size: 1.25rem;
+  }
+
+  .about-card-desc {
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  .tech-tags {
+    gap: 0.4rem;
+  }
+
+  .tech-tag {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.55rem;
+  }
+
+  /* Work Section */
+  .section-work {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .work-grid {
+    gap: 1.5rem;
+  }
+
+  .work-card-wrapper {
+    border-radius: 1.25rem;
+  }
+
+  .work-card-inner {
+    padding: 1.25rem;
+    gap: 1.25rem;
+    border-radius: calc(1.25rem - 1px);
+  }
+
+  .work-thumb-wrapper {
+    aspect-ratio: 16/10;
+    border-radius: 0.75rem;
+  }
+
+  .work-badge-overlay {
+    top: 0.75rem;
+    right: 0.75rem;
+    padding: 0.3rem 0.65rem;
+    font-size: 0.7rem;
+  }
+
+  .work-title {
+    font-size: 1.35rem;
+  }
+
+  .work-desc {
+    font-size: 0.875rem;
+    line-height: 1.55;
+  }
+
+  .work-stats-row {
+    gap: 0.4rem;
+  }
+
+  .work-stat-chip {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.55rem;
+  }
+
+  /* Services Section */
+  .section-services {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .services-bento {
+    gap: 1.25rem;
+  }
+
+  .service-card {
+    padding: 1.75rem 1.25rem;
+    gap: 1.25rem;
+    border-radius: 1.25rem;
+  }
+
+  .service-card-title {
+    font-size: clamp(1.35rem, 5vw, 1.75rem);
+  }
+
+  .service-card-desc {
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  .service-checklist {
+    margin: 1rem 0;
+    gap: 0.65rem;
+  }
+
+  .service-check-item {
+    font-size: 0.875rem;
+    gap: 0.6rem;
+  }
+
+  .service-card-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .service-perks-row {
+    flex-direction: column;
+    gap: 0.65rem;
+    margin-top: 0.75rem;
+  }
+
+  /* Why Me Section */
+  .section-why {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 1.5rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .why-layout {
+    gap: 2rem;
+  }
+
+  .why-title {
+    font-size: clamp(2.2rem, 7vw, 3.2rem);
+    line-height: 1.1;
+  }
+
+  .why-content-col {
+    gap: 2rem;
+  }
+
+  .why-card {
+    padding-top: 1.25rem;
+    gap: 0.75rem;
+  }
+
+  .why-card-num {
+    font-size: 1.25rem;
+  }
+
+  .why-card-title {
+    font-size: 1.25rem;
+  }
+
+  .why-card-desc {
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  /* FAQ Section */
+  .section-faq {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .faq-layout {
+    gap: 2rem;
+  }
+
+  .faq-sticky-title {
+    font-size: clamp(2.2rem, 7vw, 3.2rem);
+  }
+
+  .faq-trigger {
+    padding: 1.25rem 0;
+    font-size: 1rem;
+    gap: 1rem;
+  }
+
+  .faq-body-inner {
+    padding-bottom: 1.25rem;
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  /* Theatrical Menu Drawer on Mobile */
+  .menu-content {
+    padding: 4.75rem 1.25rem 2.5rem;
+  }
+
+  .menu-grid {
+    gap: 2rem;
+  }
+
+  .menu-nav-links {
+    gap: 0.65rem;
+  }
+
+  .menu-nav-link {
+    font-size: clamp(2rem, 8vw, 3.2rem);
+    line-height: 1.1;
+  }
+
+  .menu-bio {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+
+  .menu-social-links {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .menu-social-link {
+    font-size: 0.9375rem;
+  }
+
+  /* Footer Section */
+  .footer {
+    padding-top: 5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .footer-cta {
+    gap: 1.75rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .footer-availability {
+    font-size: 0.875rem;
+  }
+
+  .footer-headline {
+    font-size: clamp(2.2rem, 8vw, 3.6rem);
+    line-height: 1.05;
+  }
+
+  .footer-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 0.85rem;
+  }
+
+  .footer-bottom {
+    padding-top: 2rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    font-size: 0.8125rem;
+  }
+
+  .footer-bottom-links {
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+  }
+
+  .footer-bottom-link {
+    font-size: 0.875rem;
+  }
+}
+
+/* 4. Small Mobile Devices (max-width: 400px) */
+@media (max-width: 400px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .hero-h1-wrapper {
+    font-size: clamp(1.85rem, 9vw, 2.5rem);
+  }
+
+  .hero-actions .btn-rolling,
+  .hero-actions .btn-copy-email {
+    font-size: 0.8125rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .hero-image-badge {
+    padding: 0.6rem 0.75rem;
+  }
+
+  .hero-badge-title {
+    font-size: 0.8125rem;
+  }
+
+  .hero-badge-sub {
+    font-size: 0.6875rem;
+  }
+
+  .service-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .why-title,
+  .faq-sticky-title,
+  .footer-headline {
+    font-size: clamp(1.9rem, 8vw, 2.6rem);
   }
 }
 

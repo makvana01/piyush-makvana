@@ -211,6 +211,13 @@ function initCustomCursor() {
   const follower = document.querySelector(".custom-cursor-follower");
   if (!cursor || !follower) return;
 
+  // Touch / Mobile device check: disable custom cursor on touch screens
+  if (window.matchMedia("(pointer: coarse)").matches || window.innerWidth <= 991) {
+    cursor.style.display = "none";
+    follower.style.display = "none";
+    return;
+  }
+
   let mouseX = window.innerWidth / 2;
   let mouseY = window.innerHeight / 2;
   let followerX = mouseX;
@@ -373,10 +380,11 @@ function initFaqAccordion() {
    10. SCROLL TRIGGER & REVEAL ANIMATIONS
    ========================================================================== */
 function initScrollAnimations() {
+  const isMobile = window.innerWidth <= 767;
   const observerOptions = {
     root: null,
-    threshold: 0.12,
-    rootMargin: "0px 0px -50px 0px",
+    threshold: isMobile ? 0.04 : 0.12,
+    rootMargin: isMobile ? "0px 0px -20px 0px" : "0px 0px -50px 0px",
   };
 
   const observer = new IntersectionObserver((entries, obs) => {
